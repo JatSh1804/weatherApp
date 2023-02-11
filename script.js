@@ -44,11 +44,11 @@ document.querySelector(".btn").addEventListener("click", function (event) {
 function getWeather(city) {
   let p = fetch("http://api.weatherapi.com/v1/forecast.json?key=0214043aa09c4e679f3202051231002&q=" + city + "&days=6&aqi=no&alerts=no");
   p.then((response) => {
-    // console.log(response.status)
-    console.log(response.ok)
+     console.log(response.status)
+    //console.log(response.ok)
     return response.json()
   }).then((value2) => {
-    console.log(value2)
+    //console.log(value2)
 
     temp.innerHTML = value2.current.temp_c + "&#176";
     humidity.innerHTML = value2.current.humidity + " %";
