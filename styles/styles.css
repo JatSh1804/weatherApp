@@ -3,6 +3,8 @@ body {
   width: 100%;
   margin: 0;
   overflow: auto;
+  user-select: none;
+  font-family: 'rubik', sans-serif;
 }
 /* section{
   width: 100%;
@@ -59,7 +61,7 @@ p {
   filter: blur(6px);
   z-index: -1;
   /* background-repeat: no-repeat; */
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
 
 }
 
@@ -98,7 +100,7 @@ hr {
   background-size: cover;
   height: 100%;
   background-position: center;
-  /* background-repeat: no-repeat */
+  /* background-repeat: no-repeat; */
   border-radius: 7% 0 0 7%;
   border: 3px solid grey;
   text-align: center;
@@ -216,7 +218,7 @@ button:focus {
 
   justify-content: center;  
   padding: 20px;
-  grid-gap: 15px;
+  grid-gap: 40px;
 
 } 
 .fcDiv{
@@ -224,6 +226,7 @@ button:focus {
   width: auto;
   text-align: center;
   background-color: grey;
+  opacity: 0.8;
 
 }
 .fcDiv h3{
