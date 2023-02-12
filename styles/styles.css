@@ -4,37 +4,53 @@ body {
   margin: 0;
   overflow: auto;
   user-select: none;
-  font-family: 'rubik', sans-serif;
+  font-family: 'Courier Prime', sans-serif;
+}
+.preloader{
+  background: url("https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif");
+  z-index: 2;
+  position:fixed;
+  width:100vw;
+  height: 100vh;
+  background-size: contain;
+  background-position: center;
+  background-color: rgb(51, 73, 95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;  
+  /* transition: preloader 1000ms ease; */
+  transition:opacity 2s ease-in-out;
 }
 
-/* section{
-  width: 100%;
-  height: 100%;
-} */
+.remove-preloader{
+  opacity:0;
+  pointer-events: none;
+}
 
 h1 {
   color: rgb(7, 1, 1);
-  font-size: 4rem;
+  font-size: 4em;
   font-weight: 900;
   margin: 0;
   display: block;
 }
 
 h2 {
-  color: rgba(0, 0, 0, 0.902);
-  font-size: 1.5rem;
+  color: #fff;
+  font-size: 1.5em;
   margin: 0;
 }
 
 
 h3 {
   color: rgba(0, 0, 0, 0.897);
-  font-size: rem;
+  font-size: em;
 }
 
 p {
   color: white;
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 .timing {
@@ -105,6 +121,8 @@ p {
   width: 80%;
   height: 80%;
   border-radius: 10%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
   /* background-color: cyan; */
   /* border: solid black 1px; */
 }
@@ -219,13 +237,14 @@ button {
 }
 
 button:hover {
-  background: #e0a1be;
-  color: #444;
+  background: linear-gradient(89.7deg, rgb(53, 92, 125, 0.9) -10.7%, rgb(0, 0, 0, 0.9) 88.8%);
+  color: white;
 }
 
 button:active {
   box-shadow: 0px 0px 12px 0px green;
-  background-color: green;
+  background: green;
+
 }
 
 button:focus {
@@ -265,19 +284,24 @@ button:focus {
   border-radius: 20px;
   width: auto;
   text-align: center;
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.509);
   opacity: 0.8;
-
+  /* border-radius: 50%; */
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;  
+}
+.fcDiv:hover{
+  transform: scale(1.1);
 }
 
 .fcDiv h3 {
   color: white;
-  font-size: 2rem;
+  font-size: 2em;
   margin-top: 0;
 }
 
 .fcDiv img {
-  height: 8rem;
+  height: 8em;
+  pointer-events: none;
 }
 
 @media (max-width:998px) {
@@ -294,16 +318,19 @@ button:focus {
 
 @media(max-height:630px){
   html{
-    font-size: 80%;
+    font-size: 70%;
   }
 }
-@media(max-height:550px){
+@media(max-height:580px){
   html{
-    font-size: 70%;
+    font-size: 60%;
   }
 }
 @media(max-height:500px){
   html{
-    font-size: 60%;
+    font-size: 50%;
   }
+}
+.animateSun{
+  tran
 }
