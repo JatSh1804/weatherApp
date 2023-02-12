@@ -48,7 +48,7 @@ document.querySelector(".btn").addEventListener("click", function (event) {
 
 
 function getWeather(city) {
-  let p = fetch("http://api.weatherapi.com/v1/forecast.json?key=51586754fd1f439583c111631231202&q=" + city + "&days=6&aqi=no&alerts=no");
+  let p = fetch("https://api.weatherapi.com/v1/forecast.json?key=51586754fd1f439583c111631231202&q=" + city + "&days=6&aqi=no&alerts=no");
   p.then((response) => {
     // console.log(response.status)
     console.log(response.ok)
