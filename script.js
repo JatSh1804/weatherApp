@@ -1,3 +1,5 @@
+import API_KEY1 from "./apiKey.js";
+
 const temp = document.querySelector(".temp");
 const region = document.querySelector(".location");
 const visibility = document.querySelector(".visibility");
@@ -22,6 +24,8 @@ const dayDay4 = document.querySelector(".dayDay4")
 const dayDay5 = document.querySelector(".dayDay5")
 const dayDay6 = document.querySelector(".dayDay6")
 
+
+
 getWeather("New Delhi");
 // getPhoto("New Delhi");
 
@@ -38,17 +42,19 @@ document.querySelector(".btn").addEventListener("click", function (event) {
   event.preventDefault();
   getWeather(place);
   getPhoto(place);
-  
+
 })
 
+
+
 function getWeather(city) {
-  let p = fetch("http://api.weatherapi.com/v1/forecast.json?key=0214043aa09c4e679f3202051231002&q=" + city + "&days=6&aqi=no&alerts=no");
+  let p = fetch("http://api.weatherapi.com/v1/forecast.json?key="+API_KEY1+"&q=" + city + "&days=6&aqi=no&alerts=no");
   p.then((response) => {
-     console.log(response.status)
-    //console.log(response.ok)
+    // console.log(response.status)
+    console.log(response.ok)
     return response.json()
   }).then((value2) => {
-    //console.log(value2)
+    console.log(value2)
 
     temp.innerHTML = value2.current.temp_c + "&#176";
     humidity.innerHTML = value2.current.humidity + " %";
@@ -82,12 +88,19 @@ function getWeather(city) {
 
     for (let i = 0; i < 6; i++) {
       document.querySelectorAll(".dayDay")[i].innerHTML = Days[i];
-      var iconArr= value2.forecast.forecastday[i].day.condition.icon;
-      document.querySelectorAll("img")[i].setAttribute("src",iconArr)
-
-
+      var iconArr = value2.forecast.forecastday[i].day.condition.icon;
+      document.querySelectorAll("img")[i].setAttribute("src", iconArr)
     }
     // ---------------ForecastIcon---------------
+
+    //----------------Date update----------------
+    let  todaysdate= d.getDate();
+    let Mon = d.getMonth();
+    let Year = d.getFullYear();
+
+    const Month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    document.querySelectorAll(".date").innerHTML = todaysdate + " " + Month[Mon] + " " + Year;
 
 
 
@@ -104,17 +117,17 @@ function getPhoto(city) {
   }).then((value2) => {
     // console.log(value2)
     let x = Math.floor((Math.random() * 10) + 1);
-    var apiImg=value2.hits[x].webformatURL;
+    var apiImg = value2.hits[x].webformatURL;
     // console.log(apiImg)
 
-    document.querySelectorAll(".background")[0].style.backgroundImage="url("+apiImg+")";
-    document.querySelectorAll(".background")[1].style.backgroundImage="url("+apiImg+")";
+    document.querySelectorAll(".background")[0].style.backgroundImage = "url(" + apiImg + ")";
+    document.querySelectorAll(".background")[1].style.backgroundImage = "url(" + apiImg + ")";
 
 
     let d = Math.floor((Math.random() * 10) + 1);
-    var infoImg= value2.hits[d].webformatURL;
+    var infoImg = value2.hits[d].webformatURL;
     // console.log(infoImg);
-    document.querySelector(".WeatherPhoto").style.backgroundImage="url("+infoImg+")";
+    document.querySelector(".WeatherPhoto").style.backgroundImage = "url(" + infoImg + ")";
 
   })
 
