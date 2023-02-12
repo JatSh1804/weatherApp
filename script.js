@@ -128,7 +128,6 @@ function getPhoto(city) {
     var apiImg = value2.hits[x].webformatURL;
     // console.log(apiImg)
 
-    document.querySelector(".background")[0].
     document.querySelectorAll(".background")[0].style.backgroundImage = "url(" + apiImg + ")";
     document.querySelectorAll(".background")[1].style.backgroundImage = "url(" + apiImg + ")";
 
