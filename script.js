@@ -7,12 +7,18 @@ setInterval(() => {
   let currentDate= new Date();
   let cHrs = currentDate.getHours().toString().padStart(2, '0');
   let cMin = currentDate.getMinutes().toString().padStart(2, '0');
-  let cSec = currentDate.getSeconds().toString().padStart(2, '0');
+  let timeSpan= "AM"
+  if (cHrs>=12) {
+    cHrs-=12;
+    timeSpan="PM"
+  }
+  
+  // let cSec = currentDate.getSeconds().toString().padStart(2, '0');
+  // :${cSec}
 
   let timeVal = document.querySelector('.timer');
-    timeVal.innerText = `${cHrs}:${cMin}:${cSec}`
+    timeVal.innerText = `${cHrs}:${cMin} ${timeSpan}`
 }, 1000);
-
 
 const temp = document.querySelector(".temp");
 const region = document.querySelector(".location");
