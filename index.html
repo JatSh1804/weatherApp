@@ -12,22 +12,25 @@
 
 <body>
 
+
     <div class="preloader">
         <!-- <img src="https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif" alt=""> -->
     </div>
-
+    <div class="time"><h2 class="timer">Time</h2></div>
+     
     <div class="parent">
         <div class="background"></div>
         <div class="row">
             <div class="WeatherPhoto coloumn">
                 <div class="geolocation">
-                    <div>
+                    <div style="display:flex">
+                        <img src="" class="icon" alt="">
                         <h1 class="temp">0&#176</h1>
                     </div>
                     <div class="timing">
                         <h2 class="location"></h2>
                         <!-- <p class="Country">India</p> -->
-                        <p> <span class="day">Monday</span>, <span class="date">9
+                        <p> <span class="day"></span>, <span class="date">9
                                 Feb
                                 '23</span>
                         </p>
@@ -36,12 +39,15 @@
                 </div>
             </div>
             <div class="WeatherInfo coloumn">
-                <div class="searchBar">
-                    <form class="search" action="">
-                        <input type="search" placeholder="Search location..." required>
-                        <button type="submit" class="btn">Search</button>
-                    </form>
+                <div class="flexbox">
+                    <div class="search">
+                        <div>
+                            <input type="text" placeholder="Enter the location" required>
+                            <input type="submit" style="display: none;">
+                        </div>
+                    </div>
                 </div>
+
                 <br>
                 <h2>Weather Details</h2>
                 <div class="Data1 DataRow">
@@ -95,39 +101,40 @@
         <div class="forecast">
             <div class="forecast1 fcDiv">
                 <img src="" alt="" class="icon">
-                <h3 class="tempDay1">0&#176</h3>
-                <h3 class="dayDay">Monday</h3>
+                <h3 class="tempDay">0&#176</h3>
+                <h3 class="dayDay"></h3>
             </div>
             <div class="forecast2 fcDiv">
                 <img src="" class="icon" alt="">
-                <h3 class="tempDay2">0&#176</h3>
-                <h3 class="dayDay">Monday</h3>
+                <h3 class="tempDay">0&#176</h3>
+                <h3 class="dayDay"></h3>
             </div>
             <div class="forecast3 fcDiv">
                 <img src="" class="icon" alt="">
-                <h3 class="tempDay3">0&#176</h3>
-                <h3 class="dayDay">Monday</h3>
+                <h3 class="tempDay">0&#176</h3>
+                <h3 class="dayDay"></h3>
             </div>
             <div class="forecast4 fcDiv">
                 <img class="icon" src="" alt="">
-                <h3 class="tempDay4">0&#176</h3>
-                <h3 class="dayDay">Monday</h3>
+                <h3 class="tempDay">0&#176</h3>
+                <h3 class="dayDay"></h3>
             </div>
             <div class="forecast5 fcDiv">
                 <img class="icon" src="" alt="">
-                <h3 class="tempDay5">0&#176</h3>
-                <h3 class="dayDay">Monday</h3>
+                <h3 class="tempDay">0&#176</h3>
+                <h3 class="dayDay"></h3>
             </div>
             <div class="forecast63 fcDiv">
                 <img class="icon" src="" alt="">
-                <h3 class="tempDay6">0&#176</h3>
-                <h3 class="dayDay">Monday</h3>
+                <h3 class="tempDay">0&#176</h3>
+                <h3 class="dayDay"></h3>
 
             </div>
 
         </div>
 
     </div>
+    <footer style="color: white; margin-bottom:100px;text-align: center;">&#169; Jatin Sharma</footer>
     <script type="module" src="script.js"></script>
 </body>
 
