@@ -4,20 +4,20 @@ window.addEventListener("load", () => {
 });
 
 setInterval(() => {
-  let currentDate= new Date();
+  let currentDate = new Date();
   let cHrs = currentDate.getHours().toString().padStart(2, '0');
   let cMin = currentDate.getMinutes().toString().padStart(2, '0');
-  let timeSpan= "AM"
-  if (cHrs>=12) {
-    cHrs-=12;
-    timeSpan="PM"
+  let timeSpan = "AM"
+  if (cHrs >= 12) {
+    cHrs -= 12;
+    timeSpan = "PM"
   }
-  
+
   // let cSec = currentDate.getSeconds().toString().padStart(2, '0');
   // :${cSec}
 
   let timeVal = document.querySelector('.timer');
-    timeVal.innerText = `${cHrs}:${cMin} ${timeSpan}`
+  timeVal.innerText = `${cHrs}:${cMin} ${timeSpan}`
 }, 1000);
 
 const temp = document.querySelector(".temp");
@@ -32,11 +32,6 @@ const feelsLike = document.querySelector(".feelsLike");
 const UV = document.querySelector(".UV");
 const rain = document.querySelector(".rain");
 const tempDay = document.querySelectorAll(".tempDay")
-// const tempDay2 = document.querySelector(".tempDay2")
-// const tempDay3 = document.querySelector(".tempDay3")
-// const tempDay4 = document.querySelector(".tempDay4")
-// const tempDay5 = document.querySelector(".tempDay5")
-// const tempDay6 = document.querySelector(".tempDay6")
 const dayDay1 = document.querySelector(".dayDay1")
 const dayDay2 = document.querySelector(".dayDay2")
 const dayDay3 = document.querySelector(".dayDay3")
@@ -57,8 +52,15 @@ window.addEventListener("keydown", (event) => {
       // document.querySelector(".input").toggleClass("inclicked");
 
       event.preventDefault();
+      // document.querySelectorAll(".background")[0].setAttribute("style", "opacity:0; transition: 1s opacity ease-in-out;")
+      // document.querySelectorAll(".background")[1].setAttribute("style", "opacity:0; transition: 1s opacity ease-in-out;")
+      
       getWeather(place);
+
+
       getPhoto(place);
+      // document.querySelectorAll(".background")[0].setAttribute("style", "opacity:1;")
+
     }
   }
 })
@@ -67,7 +69,7 @@ window.addEventListener("keydown", (event) => {
 
 
 function getWeather(city) {
-  let p = fetch("https://api.weatherapi.com/v1/forecast.json?key=8c73de23307e48bd94c175243231402&q=" + city + "&days=7&aqi=no&alerts=no");
+  let p = fetch("https://api.weatherapi.com/v1/forecast.json?key=51586754fd1f439583c111631231202&q=" + city + "&days=7&aqi=no&alerts=no");
 
   p.then((response) => {
     // console.log(response.status)
