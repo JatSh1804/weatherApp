@@ -69,7 +69,7 @@ window.addEventListener("keydown", (event) => {
 
 
 function getWeather(city) {
-  let p = fetch("https://api.weatherapi.com/v1/forecast.json?key=51586754fd1f439583c111631231202&q=" + city + "&days=7&aqi=no&alerts=no");
+  let p = fetch("https://api.weatherapi.com/v1/forecast.json?key=8c73de23307e48bd94c175243231402&q=" + city + "&days=7&aqi=no&alerts=no");
 
   p.then((response) => {
     // console.log(response.status)
